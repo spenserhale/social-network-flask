@@ -22,6 +22,26 @@ class User(UserMixin, Model):
             (Post.user == self)
         )
 
+    def following(self):
+        """The users that we are following."""
+        return (
+            User.select().join(
+                Relationship, on=Relationship.to_user
+            ).where(
+                Relationship.from_user == self
+            )
+        )
+
+    def followers(self):
+        """Get users following the current user"""
+        return (
+            User.select().join(
+                Relationship, on=Relationship.from_user
+            ).where(
+                Relationship.to_user == self
+            )
+        )
+
     class Meta:
         database = DATABASE
         order_by = ('-joined_at',)
