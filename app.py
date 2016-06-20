@@ -54,10 +54,13 @@ def register():
 
 if __name__ == '__main__':
     models.initialize()
-    models.User.create_user(
-        username='spenserhale',
-        email='spenser.hale.accounts@outlook.com',
-        password='temp_password',
-        admin=True
-    )
+    try:
+        models.User.create_user(
+            username='spenserhale',
+            email='spenser.hale.accounts@outlook.com',
+            password='temp_password',
+            admin=True
+        )
+    except ValueError:
+        pass
     app.run(debug=DEBUG, host=HOST, port=PORT)
