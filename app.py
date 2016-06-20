@@ -80,6 +80,11 @@ def logout():
     return redirect(url_for('index'))
 
 
+@app.route('/')
+def index():
+    return ''
+
+
 if __name__ == '__main__':
     models.initialize()
     try:
