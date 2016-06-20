@@ -175,13 +175,4 @@ def not_found(error):
 
 if __name__ == '__main__':
     models.initialize()
-    try:
-        models.User.create_user(
-            username='spenserhale',
-            email='spenser.hale.accounts@outlook.com',
-            password='temp_password',
-            admin=True
-        )
-    except ValueError:
-        pass
     app.run(debug=DEBUG, host=HOST, port=PORT)
