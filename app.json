@@ -1,0 +1,7 @@
+{
+  "name": "Social Network Flask Project",
+  "description": "A flask app that lets post updates, view posts and follow friends.",
+  "image": "heroku/python",
+  "repository": "https://github.com/spenserhale/social-network-flask",
+  "keywords": ["python", "flask" ]
+}
